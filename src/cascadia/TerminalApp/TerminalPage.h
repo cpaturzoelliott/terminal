@@ -188,6 +188,7 @@ namespace winrt::TerminalApp::implementation
         void SetFocusMode(const bool inFocusMode);
         void Maximized(bool newMaximized);
         void RequestSetMaximized(bool newMaximized);
+        void ToggleCommandHistory();
 
         void SetStartupActions(std::vector<Microsoft::Terminal::Settings::Model::ActionAndArgs> actions);
         void SetStartupConnection(winrt::Microsoft::Terminal::TerminalConnection::ITerminalConnection connection);
@@ -267,6 +268,7 @@ namespace winrt::TerminalApp::implementation
 
     private:
         friend struct TerminalPageT<TerminalPage>; // for Xaml to bind events
+        friend struct CommandHistoryControl; // for the command history widget to find the active control
         std::optional<HWND> _hostingHwnd;
 
         // If you add controls here, but forget to null them either here or in
@@ -282,6 +284,7 @@ namespace winrt::TerminalApp::implementation
         Windows::UI::Xaml::Controls::MenuFlyout _workspaceFlyout{ nullptr };
         Windows::UI::Xaml::Controls::Button _workspaceDropdown{ nullptr };
         winrt::TerminalApp::ColorPickupFlyout _tabColorPicker{ nullptr };
+        winrt::TerminalApp::CommandHistoryControl _commandHistory{ nullptr };
 
         Microsoft::Terminal::Settings::Model::CascadiaSettings _settings{ nullptr };
 

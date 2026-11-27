@@ -80,6 +80,9 @@
     <Page Include="MarkdownPaneContent.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="CommandHistoryControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <!-- ========================= Headers ======================== -->
   <ItemGroup>
@@ -183,6 +186,9 @@
       <DependentUpon>MarkdownPaneContent.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="WindowsPackageManagerFactory.h" />
+    <ClInclude Include="CommandHistoryControl.h">
+      <DependentUpon>CommandHistoryControl.xaml</DependentUpon>
+    </ClInclude>
   </ItemGroup>
   <!-- ========================= Cpp Files ======================== -->
   <ItemGroup>
@@ -297,7 +303,9 @@
       <DependentUpon>MarkdownPaneContent.xaml</DependentUpon>
       <SubType>Code</SubType>
     </ClCompile>
-
+    <ClCompile Include="CommandHistoryControl.cpp">
+      <DependentUpon>CommandHistoryControl.xaml</DependentUpon>
+    </ClCompile>
   </ItemGroup>
   <!-- ========================= idl Files ======================== -->
   <ItemGroup>
@@ -366,6 +374,10 @@
     </Midl>
     <Midl Include="MarkdownPaneContent.idl">
       <DependentUpon>MarkdownPaneContent.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Midl>
+    <Midl Include="CommandHistoryControl.idl">
+      <DependentUpon>CommandHistoryControl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Midl>
   </ItemGroup>

@@ -42,13 +42,23 @@
             </mux:InfoBar>
         </StackPanel>
 
-        <Grid x:Name="TabContent"
-              Grid.Row="2"
-              HorizontalAlignment="Stretch"
-              VerticalAlignment="Stretch">
-            <Grid.Background>
-                <ImageBrush />
-            </Grid.Background>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="TabContent"
+                  Grid.Column="0"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch">
+                <Grid.Background>
+                    <ImageBrush />
+                </Grid.Background>
+            </Grid>
+
+            <local:CommandHistoryControl x:Name="CommandHistory"
+                                         Grid.Column="1" />
         </Grid>
 
         <!--

@@ -1638,4 +1638,11 @@ namespace winrt::TerminalApp::implementation
         args.Handled(true);
     }
 
+    void TerminalPage::_HandleToggleCommandHistory(const IInspectable& /*sender*/,
+                                                   const ActionEventArgs& args)
+    {
+        ToggleCommandHistory();
+        args.Handled(true);
+    }
+
 }

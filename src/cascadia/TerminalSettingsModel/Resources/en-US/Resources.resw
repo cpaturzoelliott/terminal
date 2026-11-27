@@ -456,6 +456,9 @@
   <data name="ToggleCommandPaletteCommandKey" xml:space="preserve">
     <value>Toggle command palette</value>
   </data>
+  <data name="ToggleCommandHistoryCommandKey" xml:space="preserve">
+    <value>Toggle command history</value>
+  </data>
   <data name="SuggestionsCommandKey" xml:space="preserve">
     <value>Open suggestions</value>
   </data>

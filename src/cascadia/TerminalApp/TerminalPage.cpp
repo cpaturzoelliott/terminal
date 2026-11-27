@@ -336,6 +336,7 @@ namespace winrt::TerminalApp::implementation
         _tabContent = this->TabContent();
         _tabRow = this->TabRow();
         _tabView = _tabRow.TabView();
+        _commandHistory = this->CommandHistory();
         _rearranging = false;
 
         const auto canDragDrop = _tabDragDropEnabled();
@@ -4397,6 +4398,20 @@ namespace winrt::TerminalApp::implementation
     {
         _isAlwaysOnTop = !_isAlwaysOnTop;
         AlwaysOnTopChanged.raise(*this, nullptr);
+    }
+
+    // Method Description:
+    // - Shows or hides the command history widget.
+    // Arguments:
+    // - <none>
+    // Return Value:
+    // - <none>
+    void TerminalPage::ToggleCommandHistory()
+    {
+        if (_commandHistory)
+        {
+            _commandHistory.Toggle();
+        }
     }
 
     // Method Description:

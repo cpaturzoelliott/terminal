@@ -1,0 +1,9 @@
+namespace TerminalApp
+{
+    [default_interface] runtimeclass CommandHistoryControl : Windows.UI.Xaml.Controls.UserControl
+    {
+        CommandHistoryControl();
+
+        void Toggle();
+    }
+}
